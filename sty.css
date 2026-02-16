@@ -1,0 +1,309 @@
+/* GENERAL STYLES */
+body { margin:0; background:white; font-family: Arial, sans-serif; overflow-x: hidden; }
+a { text-decoration:none; color:inherit; }
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: black;
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.navbar.navbar-hide {
+  transform: translateY(-100%);
+}
+body {
+  padding-top: 60px;
+}
+
+/* LOGO + BRAND */
+.logo-brand {
+  display: flex;
+  align-items: center;
+}
+.logo { height: 40px; }
+.brand-name { color: yellow; font-size: 16px; font-style: italic; margin-left: 10px; text-decoration: underline; }
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-right: 40px;
+}
+.nav-links a {
+  color:yellow;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  font-size: larger;
+}
+.nav-links a:hover { text-decoration: underline; }
+
+/* SEARCH BAR */
+.header-search {
+  display: flex;
+  border: 2px solid yellow;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  border-radius: 50px;
+  padding: 5px 10px;
+  width: 60%;
+  margin: 10px auto; /* centre la barre */
+}
+.header-search input {
+  border: none;
+  background: transparent;
+  color: yellow;
+  padding: 5px 10px;
+  width: 100%;
+  outline: none;
+}
+.header-search input::placeholder { color: white; }
+
+/* HERO */
+.hero {
+  height:100vh; 
+  background:url("images/logo.jpeg") center/cover no-repeat;
+  position: relative;
+}
+.hero-overlay {
+  background:rgba(0,0,0,0.6);
+  height:100%; 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+.hero-logo { height:80px; }
+.btn {
+  background:yellow; 
+  color:black; 
+  padding:10px 20px;
+  border-radius:20px; 
+  margin-top:10px; 
+  display:inline-block;
+}
+
+/* CATEGORIES */
+.categories {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px; 
+  padding:20px;
+}
+.cat {
+  background:yellow; 
+  color:black; 
+  text-align:center;
+  padding:15px; 
+  border-radius:15px; 
+  cursor:pointer;
+}
+
+/* PRODUCTS */
+.counter { text-align:center; font-weight:bold; }
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px; 
+  padding:20px;
+}
+.product {
+  border:1px solid #ccc; 
+  border-radius:15px;
+  padding:10px; 
+  text-align:center;
+  transition:0.3s; 
+  position:relative;
+}
+.product img { width:100%; border-radius:10px; }
+.badge {
+  background:red; 
+  color:white; 
+  padding:3px 8px;
+  border-radius:10px; 
+  font-size:12px;
+  position:absolute; 
+  top:10px; 
+  left:10px;
+}
+
+/* PRODUCT DETAIL */
+.product-detail { 
+  width: 80%; 
+  max-width: 600px;
+  margin:30px auto; 
+  text-align:center; 
+  margin-top: 70px; 
+}
+.product-detail img { width:100%; border-radius:15px; margin-bottom:20px; }
+
+/* CONTACT PAGE */
+.contact-page { 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  padding:40px 20px; 
+  background: linear-gradient(rgba(85, 81, 75, 0.85), rgba(27, 27, 26, 0.85)),
+              url("images/logo1.jpeg") center/cover no-repeat; 
+  min-height:90vh; 
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.contact-section {
+  max-width:520px; 
+  width:100%; 
+  padding:20px; 
+  border-radius:40px;
+  background:rgba(255, 255, 60, 0.5); 
+  text-align:center;
+}
+.contact-text { color:black; font-size:larger; font-weight:bold; margin-bottom:30px; }
+.social-buttons { display:flex; flex-direction:column; gap:15px; margin-bottom:30px; }
+.btn.facebook{ background:#1877f2; color:white; }
+.btn.instagram{ background:linear-gradient(45deg,#fd1d1d,#fcb045,#833ab4); color:white; }
+.btn.whatsapp{ background:#25d366; color:white; }
+
+/* CONTACT INFO */
+.contact-info-box { 
+  display:flex; 
+  justify-content:space-between; 
+  margin-top:40px; 
+  padding-top:20px; 
+  border-top:1px solid #ddd; 
+  flex-wrap: wrap;
+}
+.contact-info-box div { 
+  width:45%; 
+  color:black; 
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+.footer{ 
+  background:#222; 
+  color:#aaa; 
+  text-align:center; 
+  padding:40px 10px; 
+  margin-top:60px; 
+}
+.footer h2{ color:yellow; margin-bottom:10px; }
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: yellow;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes fade { from{opacity:0; transform:scale(.95);} to{opacity:1; transform:scale(1);} }
+.product { animation:fade .4s; }
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .header-search { width:70%; }
+  .products { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+  .categories { grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); }
+}
+@media(max-width:768px){
+  .hero{ height:60vh; }
+  .nav-links { font-size: 14px; gap: 10px; }
+  .header-search { width:80%; }
+}
+@media(max-width:480px){
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: linear-gradient(rgba(85, 81, 75, 0.85), rgba(27, 27, 26, 0.85)),
+              url("images/logo1.jpeg") center/cover no-repeat; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: 0.3s;
+    box-sizing: border-box;
+    z-index: 999;
+  }
+ 
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active,
+  .nav-links a:focus {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 0, 0.2);
+    transform: scale(1.1);
+  }
+
+  /* HERO visible au chargement */
+  .hero {
+    height: 100vh;
+  }
+
+  /* Search + catégories cachées au début */
+  .header-search,
+  .categories {
+    margin-top: 30px;
+  }
+
+  /* Contact page mobile */
+  .contact-section {
+    max-width: 90%;
+    padding: 20px 15px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info-box {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .contact-info-box div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
