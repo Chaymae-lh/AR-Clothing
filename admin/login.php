@@ -39,11 +39,13 @@ body {
     justify-content:center;
     align-items:center;
     height:100vh;
-    background:rgb(206, 199, 99);
+     background: linear-gradient(rgba(85, 81, 75, 0.85), rgba(27, 27, 26, 0.85)),
+              url("../images/logo1.jpeg") center/cover no-repeat; 
     font-family:Arial;
+    color:yellow
 }
 form {
-    background:rgba(255,255,0,0.15);
+    background:#292925;
     padding:30px;
     border-radius:20px;
     width:300px;
@@ -69,12 +71,31 @@ button {
     margin-bottom:10px;
 }
     @media (max-width: 768px) {
-  form {
-    width: 100%;
+  body {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
   }
-  input, button {
+  form {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 25px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  input {
     width: 100%;
+    padding: 15px;
+    margin: 15px 0;
     font-size: 16px;
+  }
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
   }
 }
 

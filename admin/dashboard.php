@@ -71,7 +71,17 @@ a.delete { color:red; text-decoration:none; }
 <h3>Ajouter un produit</h3>
 <form method="post" enctype="multipart/form-data">
 <input type="text" name="name" placeholder="Nom du produit" required>
-<input type="text" name="category" placeholder="Catégorie" required>
+<select name="category" required>
+<option value="">-- Sélectionner une catégorie --</option>
+<option value="jeans">Jeans</option>
+<option value="Tracksuits">Tracksuits</option>
+<option value="hoodies">Hoodies</option>
+<option value="jackets">Jackets</option>
+<option value="Sneakers">Sneakers</option>
+<option value="T-shirts">T-shirts</option>
+<option value="shorts">Shorts</option>
+<option value="Outfits">Outfits</option>
+</select>
 <input type="number" name="price" placeholder="Prix" step="0.01" required>
 <input type="number" name="old_price" placeholder="Ancien prix (optionnel)" step="0.01">
 <textarea name="description" placeholder="Description du produit"></textarea>
