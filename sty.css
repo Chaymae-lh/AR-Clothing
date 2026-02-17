@@ -222,10 +222,49 @@ body {
   .categories { grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); }
 }
 @media(max-width:768px){
-  .hero{ height:60vh; }
-  .nav-links { font-size: 14px; gap: 10px; }
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: linear-gradient(rgba(85, 81, 75, 0.85), rgba(27, 27, 26, 0.85)),
+              url("images/logo1.jpeg") center/cover no-repeat; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: 0.3s;
+    box-sizing: border-box;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active,
+  .nav-links a:focus {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 0, 0.2);
+    transform: scale(1.1);
+  }
   .header-search { width:80%; }
+  .hero{ height:60vh; }
 }
+
 @media(max-width:480px){
 
   .hamburger {

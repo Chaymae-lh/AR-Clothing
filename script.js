@@ -101,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🍔 HAMBURGER MENU (MAINTENANT OK)
   // =======================
   if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       navLinks.classList.toggle("active");
       document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
     });
@@ -112,6 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.remove("active");
         document.body.style.overflow = "auto";
       });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
     });
   }
 
