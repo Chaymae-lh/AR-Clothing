@@ -1,6 +1,6 @@
 #  AR Clothing – Boutique de vêtements en ligne
 
-## 📌 Description du projet
+##  Description du projet
 **AR Clothing** est un site e-commerce simple et moderne destiné à une boutique de vêtements .  
 Le site permet de présenter des produits, de filtrer par catégories, de rechercher des articles et de commander facilement via **WhatsApp**.  
 Un **espace administrateur sécurisé** permet au vendeur d’ajouter, modifier et supprimer des produits depuis un téléphone ou un ordinateur.
